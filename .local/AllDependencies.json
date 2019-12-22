@@ -112,6 +112,15 @@
           }
         }
       },
+      "GetFilesFromFolderActivities/1.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/_._": {}
+        },
+        "runtime": {
+          "lib/GetFilesFromFolder.dll": {}
+        }
+      },
       "Humanizer.Core/2.4.2": {
         "type": "package",
         "compile": {
@@ -276,6 +285,47 @@
         },
         "build": {
           "build/_._": {}
+        }
+      },
+      "UiPath.Database.Activities/1.2.6863.32528": {
+        "type": "package",
+        "compile": {
+          "lib/net40-Client/_._": {}
+        },
+        "runtime": {
+          "lib/net40-Client/Microsoft.Data.ConnectionUI.Dialog.dll": {},
+          "lib/net40-Client/UiPath.Database.Activities.Design.dll": {},
+          "lib/net40-Client/UiPath.Database.Activities.dll": {},
+          "lib/net40-Client/UiPath.Database.dll": {}
+        },
+        "resource": {
+          "lib/net40-Client/de/UiPath.Database.Activities.Design.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net40-Client/de/UiPath.Database.Activities.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net40-Client/de/UiPath.Database.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net40-Client/fr/UiPath.Database.Activities.Design.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net40-Client/fr/UiPath.Database.Activities.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net40-Client/fr/UiPath.Database.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net40-Client/ja/UiPath.Database.Activities.Design.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net40-Client/ja/UiPath.Database.Activities.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net40-Client/ja/UiPath.Database.resources.dll": {
+            "locale": "ja"
+          }
         }
       },
       "UiPath.Excel.Activities/2.8.0-preview": {
@@ -1003,6 +1053,17 @@
         "tools/install.ps1"
       ]
     },
+    "GetFilesFromFolderActivities/1.0.3": {
+      "sha512": "A4AdlCgbYOSo4P1Vfkkcn2uPOI5Rks8RNPiqPLrjnDqFpM30eb8Dhs9KeXzy5scoYoe4IMeTolrKdn99dq4wOw==",
+      "type": "package",
+      "path": "getfilesfromfolderactivities/1.0.3",
+      "files": [
+        ".nupkg.metadata",
+        "getfilesfromfolderactivities.1.0.3.nupkg.sha512",
+        "getfilesfromfolderactivities.nuspec",
+        "lib/GetFilesFromFolder.dll"
+      ]
+    },
     "Humanizer.Core/2.4.2": {
       "sha512": "1ZKy7LHVYuhmM398hpvyWCcc2Fcx+hqiGYASELDthjWhVrsA6IabYnHRfkQFF6nGG6x4fA1D0StDX/U2Pj+FdQ==",
       "type": "package",
@@ -1341,6 +1402,29 @@
         "lib/UiPath.Interop.dll",
         "uipath.19.12.7284.25613-preview.nupkg.sha512",
         "uipath.nuspec"
+      ]
+    },
+    "UiPath.Database.Activities/1.2.6863.32528": {
+      "sha512": "eNPiEjZztYygiGSvHoQla7A/IJZ54fa3qVkQRG7W+ANyI4mWsjkq0fKbPThaRIThrpJVwyU+0VMavTpHZCNKpQ==",
+      "type": "package",
+      "path": "uipath.database.activities/1.2.6863.32528",
+      "files": [
+        ".nupkg.metadata",
+        "lib/net40-Client/Microsoft.Data.ConnectionUI.Dialog.dll",
+        "lib/net40-Client/UiPath.Database.Activities.Design.dll",
+        "lib/net40-Client/UiPath.Database.Activities.dll",
+        "lib/net40-Client/UiPath.Database.dll",
+        "lib/net40-Client/de/UiPath.Database.Activities.Design.resources.dll",
+        "lib/net40-Client/de/UiPath.Database.Activities.resources.dll",
+        "lib/net40-Client/de/UiPath.Database.resources.dll",
+        "lib/net40-Client/fr/UiPath.Database.Activities.Design.resources.dll",
+        "lib/net40-Client/fr/UiPath.Database.Activities.resources.dll",
+        "lib/net40-Client/fr/UiPath.Database.resources.dll",
+        "lib/net40-Client/ja/UiPath.Database.Activities.Design.resources.dll",
+        "lib/net40-Client/ja/UiPath.Database.Activities.resources.dll",
+        "lib/net40-Client/ja/UiPath.Database.resources.dll",
+        "uipath.database.activities.1.2.6863.32528.nupkg.sha512",
+        "uipath.database.activities.nuspec"
       ]
     },
     "UiPath.Excel.Activities/2.8.0-preview": {
@@ -1728,8 +1812,10 @@
     "": [],
     ".NETFramework,Version=v4.6.1": [
       "ActivitiesBulkMoveFiles >= 1.0.0 <= 1.0.0",
+      "GetFilesFromFolderActivities >= 1.0.3 <= 1.0.3",
       "MoveFiles.Activities >= 1.0.4 <= 1.0.4",
       "System.IO.FileSystem.Watcher >= 4.3.0 <= 4.3.0",
+      "UiPath.Database.Activities >= 1.2.6863.32528 <= 1.2.6863.32528",
       "UiPath.Excel.Activities >= 2.8.0-preview <= 2.8.0-preview",
       "UiPath.Mail.Activities >= 1.8.0-preview <= 1.8.0-preview",
       "UiPath.System.Activities >= 19.12.0-preview <= 19.12.0-preview",
@@ -1756,6 +1842,11 @@
             "target": "Package",
             "version": "[1.0.0, 1.0.0]"
           },
+          "GetFilesFromFolderActivities": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[1.0.3, 1.0.3]"
+          },
           "MoveFiles.Activities": {
             "include": "Runtime",
             "target": "Package",
@@ -1765,6 +1856,11 @@
             "include": "Runtime",
             "target": "Package",
             "version": "[4.3.0, 4.3.0]"
+          },
+          "UiPath.Database.Activities": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[1.2.6863.32528, 1.2.6863.32528]"
           },
           "UiPath.Excel.Activities": {
             "include": "Runtime",

@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="636,673" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:b="clr-namespace:BulkMove;assembly=BulkMove" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="738,1103" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:b="clr-namespace:BulkMove;assembly=BulkMove" xmlns:cd="clr-namespace:Ciphix.DataProcessing;assembly=GetFilesFromFolder" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="21">
+    <scg:List x:TypeArguments="x:String" Capacity="22">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -22,10 +22,11 @@
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Database</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="15">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="18">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -41,15 +42,18 @@
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="616,573" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence sap:VirtualizedContainerService.HintSize="718,1003" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MonitorEvents ContinueOnError="{x:Null}" DisplayName="Monitor Events" sap:VirtualizedContainerService.HintSize="574,481" sap2010:WorkflowViewState.IdRef="MonitorEvents_1" RepeatForever="True">
+    <ui:MonitorEvents ContinueOnError="{x:Null}" DisplayName="Monitor Events" sap:VirtualizedContainerService.HintSize="676,911" sap2010:WorkflowViewState.IdRef="MonitorEvents_1" RepeatForever="True">
       <ui:MonitorEvents.Handler>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -58,29 +62,53 @@
         </ActivityAction>
       </ui:MonitorEvents.Handler>
       <ui:MonitorEvents.Triggers>
-        <ui:FileChangeTriggerV2 FileName="{x:Null}" ChangeType="Created" ContinueMonitoring="True" ContinueOnError="True" DisplayName="File Change Trigger" sap:VirtualizedContainerService.HintSize="452,381" sap2010:WorkflowViewState.IdRef="FileChangeTriggerV2_1" IncludeSubdirectories="False" NotifyFilters="FileName, Attributes" Path="G:\RpaTestings">
+        <ui:FileChangeTriggerV2 FileName="{x:Null}" ChangeType="Created" ContinueMonitoring="True" ContinueOnError="True" DisplayName="File Change Trigger" sap:VirtualizedContainerService.HintSize="554,812" sap2010:WorkflowViewState.IdRef="FileChangeTriggerV2_1" IncludeSubdirectories="False" NotifyFilters="FileName, Attributes" Path="G:\RpaTestings">
           <ui:FileChangeTriggerV2.Body>
             <ActivityAction x:TypeArguments="ui:FileChangeInfo">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="ui:FileChangeInfo" Name="FileChangeInfo" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="418,305" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="520,736" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Event Handler" sap:VirtualizedContainerService.HintSize="376,213" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Event Handler" sap:VirtualizedContainerService.HintSize="478,644" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="copied" />
+                    <Variable x:TypeArguments="ui:DatabaseConnection" Name="Connection" />
+                    <Variable x:TypeArguments="scg:List(x:String)" Name="Files" />
+                    <Variable x:TypeArguments="s:String[]" Name="allowedExt" />
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <b:bulkmovefiles DisplayName="Bulkmovefiles" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="bulkmovefiles_1" ToFolder="G:\NewMovedRpa" deletefiles="True" filesCopied="[copied]" fromFolder="G:\RpaTestings" />
-                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Files Moved to NewMovedRpa !!!&quot;]" />
+                  <ui:DatabaseConnect DatabaseConnection="[Connection]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="436,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=DESKTOP-151KCDM\SQLEXPRESS;Initial Catalog=Rpa;Integrated Security=True" />
+                  <Assign sap:VirtualizedContainerService.HintSize="436,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="s:String[]">[allowedExt]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="s:String[]">[System.IO.Directory.GetFiles("G:\RpaTestings")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,192" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <cd:GetFilesFromFolder FullPath="{x:Null}" DisplayName="Get files from folder" Extensions="[allowedExt]" Files="[Files]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetFilesFromFolder_1" Path="G:\RpaTestings" />
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                  </ui:CommentOut>
+                  <b:bulkmovefiles DisplayName="Move Files" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="bulkmovefiles_1" ToFolder="G:\NewMovedRpa" deletefiles="True" filesCopied="[copied]" fromFolder="G:\RpaTestings" />
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="436,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Files Moved to NewMovedRpa !!!&quot;]" />
                 </Sequence>
               </Sequence>
             </ActivityAction>

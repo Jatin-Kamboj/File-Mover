@@ -2,6 +2,45 @@
   "Packages": [
     {
       "Package": {
+        "Id": "ActivitiesBulkMoveFiles",
+        "Version": "1.0.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\admin\\.nuget\\packages\\activitiesbulkmovefiles/1.0.0\\lib/BulkMove.dll"
+      ]
+    },
+    {
+      "Package": {
+        "Id": "MoveFiles.Activities",
+        "Version": "1.0.4"
+      },
+      "Assemblies": [
+        "C:\\Users\\admin\\.nuget\\packages\\movefiles.activities/1.0.4\\lib/Move multiple files.dll"
+      ]
+    },
+    {
+      "Package": {
+        "Id": "System.IO.FileSystem.Watcher",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\admin\\.nuget\\packages\\system.io.filesystem.watcher/4.3.0\\lib/net46/System.IO.FileSystem.Watcher.dll"
+      ]
+    },
+    {
+      "Package": {
+        "Id": "UiPath.Database.Activities",
+        "Version": "1.2.6863.32528"
+      },
+      "Assemblies": [
+        "C:\\Users\\admin\\.nuget\\packages\\uipath.database.activities/1.2.6863.32528\\lib/net40-Client/Microsoft.Data.ConnectionUI.Dialog.dll",
+        "C:\\Users\\admin\\.nuget\\packages\\uipath.database.activities/1.2.6863.32528\\lib/net40-Client/UiPath.Database.Activities.Design.dll",
+        "C:\\Users\\admin\\.nuget\\packages\\uipath.database.activities/1.2.6863.32528\\lib/net40-Client/UiPath.Database.Activities.dll",
+        "C:\\Users\\admin\\.nuget\\packages\\uipath.database.activities/1.2.6863.32528\\lib/net40-Client/UiPath.Database.dll"
+      ]
+    },
+    {
+      "Package": {
         "Id": "UiPath.Excel.Activities",
         "Version": "2.8.0-preview"
       },
@@ -116,29 +155,11 @@
     },
     {
       "Package": {
-        "Id": "System.IO.FileSystem.Watcher",
-        "Version": "4.3.0"
+        "Id": "GetFilesFromFolderActivities",
+        "Version": "1.0.3"
       },
       "Assemblies": [
-        "C:\\Users\\admin\\.nuget\\packages\\system.io.filesystem.watcher/4.3.0\\lib/net46/System.IO.FileSystem.Watcher.dll"
-      ]
-    },
-    {
-      "Package": {
-        "Id": "MoveFiles.Activities",
-        "Version": "1.0.4"
-      },
-      "Assemblies": [
-        "C:\\Users\\admin\\.nuget\\packages\\movefiles.activities/1.0.4\\lib/Move multiple files.dll"
-      ]
-    },
-    {
-      "Package": {
-        "Id": "ActivitiesBulkMoveFiles",
-        "Version": "1.0.0"
-      },
-      "Assemblies": [
-        "C:\\Users\\admin\\.nuget\\packages\\activitiesbulkmovefiles/1.0.0\\lib/BulkMove.dll"
+        "C:\\Users\\admin\\.nuget\\packages\\getfilesfromfolderactivities/1.0.3\\lib/GetFilesFromFolder.dll"
       ]
     }
   ],
@@ -182,6 +203,11 @@
     "Extended.Wpf.Toolkit": {
       "Id": "Extended.Wpf.Toolkit",
       "Version": "2.8.0",
+      "Dependencies": []
+    },
+    "GetFilesFromFolderActivities": {
+      "Id": "GetFilesFromFolderActivities",
+      "Version": "1.0.3",
       "Dependencies": []
     },
     "Humanizer.Core": {
@@ -262,6 +288,11 @@
     "UiPath": {
       "Id": "UiPath",
       "Version": "19.12.7284.25613-preview",
+      "Dependencies": []
+    },
+    "UiPath.Database.Activities": {
+      "Id": "UiPath.Database.Activities",
+      "Version": "1.2.6863.32528",
       "Dependencies": []
     },
     "UiPath.Excel.Activities": {
